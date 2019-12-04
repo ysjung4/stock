@@ -11,61 +11,119 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <div id="search-box">
-      <div>
-        <input type="text" name="search" id="search" placeholder="Search..." />
+    <div class="container-fluid header mb-3">
+      <header><h1>Stock Manager</h1></header>
+    </div>
+    <div class="container">
+      <div id="search-box">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            name="search"
+            id="search"
+            placeholder="Search..."
+          />
+        </div>
+        <div class="input-group mb-3">
+          <div class="custom-control custom-checkbox mr-sm-2">
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="stock"
+              name="stock"
+            />
+            <label class="custom-control-label" for="stock"
+              >Only show products in stock</label
+            >
+          </div>
+        </div>
       </div>
-      <div>
-        <input type="checkbox" name="stock" id="stock" /><span
-          >Only show products in stock</span
-        >
+      <div id="add" class="mb-3 d-flex justify-content-end">
+        <button type="button" class="btn btn-success ">Add</button>
+      </div>
+      <div id="result">
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th colspan="4" scope="row">Sporting Goods</th>
+            </tr>
+            <tr>
+              <th scope="row">
+                <input type="checkbox" class="input-control" name="stock" />
+              </th>
+              <td>Football</td>
+              <td>$49.99</td>
+              <td>
+                <i class="fas fa-edit"></i>&nbsp;<i
+                  class="far fa-trash-alt"
+                ></i>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <input type="checkbox" class="input-control" name="stock" />
+              </th>
+              <td>Basketball</td>
+              <td>$29.99</td>
+              <td>
+                <i class="fas fa-edit"></i>&nbsp;<i
+                  class="far fa-trash-alt"
+                ></i>
+              </td>
+            </tr>
+            <tr>
+              <th colspan="4" scope="row">Electronic</th>
+            </tr>
+            <tr>
+              <th scope="row">
+                <input type="checkbox" class="input-control" name="stock" />
+              </th>
+              <td>ipodTouch</td>
+              <td>$99.99</td>
+              <td>
+                <i class="fas fa-edit"></i><i class="far fa-trash-alt"></i>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <input type="checkbox" class="input-control" name="stock" />
+              </th>
+              <td>iphone 5</td>
+              <td>$399.99</td>
+              <td>
+                <i class="fas fa-edit"></i><i class="far fa-trash-alt"></i>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <input type="checkbox" class="input-control" name="stock" />
+              </th>
+              <td>Nexus 7</td>
+              <td>$199.99</td>
+              <td>
+                <i class="fas fa-edit"></i><i class="far fa-trash-alt"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-    <div id="add">
-      <button>Add</button>
-    </div>
-    <div id="result">
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td colspan="2">Sporting Goods</td>
-          </tr>
-          <tr>
-            <td>Football</td>
-            <td>$49.99</td>
-          </tr>
-          <tr>
-            <td>Basketball</td>
-            <td>$29.99</td>
-          </tr>
-          <tr>
-            <td>Electronic</td>
-          </tr>
-          <tr>
-            <td>ipodTouch</td>
-            <td>$99.99</td>
-          </tr>
-          <tr>
-            <td>iphone 5</td>
-            <td>$399.99</td>
-          </tr>
-          <tr>
-            <td>Nexus 7</td>
-            <td>$199.99</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div id="footer">
-      Test@2019
+    <div class="container-fluid">
+      <div class="footer">
+        Test@2019
+      </div>
     </div>
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -80,6 +138,10 @@
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/758d84d691.js"
       crossorigin="anonymous"
     ></script>
   </body>

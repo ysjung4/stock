@@ -14,3 +14,7 @@ This project is for CRUD of stock management.
 - [ ] Apply Redux
 - [ ] Apply Async data
 - [ ] Apply design - bootstrap4, antd, materialUI
+
+## Study
+
+- [ ] Hoisting & bind

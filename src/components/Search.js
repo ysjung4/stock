@@ -1,6 +1,6 @@
 import React from "react";
 
-const Search = () => {
+const Search = ({ category }) => {
   return (
     <div id="search-box">
       <div className="input-group mb-3">
@@ -25,6 +25,15 @@ const Search = () => {
             Only show products in stock
           </label>
         </div>
+      </div>
+      <div className="input-group mb-3">
+        <input list="category" name="category" />
+        <datalist id="category">
+          <option value="All" />
+          {category.map(e => (
+            <option value={e}>{e}</option>
+          ))}
+        </datalist>
       </div>
     </div>
   );

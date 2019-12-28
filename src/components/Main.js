@@ -8,13 +8,23 @@ import Add from "./Add";
 
 class Main extends Component {
   state = {
-    stocks: []
+    stocks: [],
+    category: []
+  };
+
+  getCategory = data => {
+    const category = [];
+    data.forEach(e => {
+      category.push(e.category);
+    });
+    return Array.from(new Set(category));
   };
 
   componentDidMount() {
     console.log("componentDidMount : ", data);
     this.setState({
-      stocks: data
+      stocks: data,
+      category: this.getCategory(data)
     });
   }
 
@@ -27,19 +37,17 @@ class Main extends Component {
   render() {
     console.log("render");
     console.log("my stocks : ", this.state.stocks);
-
+    const { stocks, category } = this.state;
+    console.log("category", category);
     return (
       <div>
         <div className="container-fluid header mb-3">
           <Header />
         </div>
         <div className="container">
-          <Search />
+          <Search category={category} />
           <Add />
-          <Content
-            stocks={this.state.stocks}
-            handleRemove={this.handleRemove}
-          />
+          <Content stocks={stocks} handleRemove={this.handleRemove} />
         </div>
         <div className="container-fluid footer mb-3">
           <Footer />

@@ -10,8 +10,15 @@ class StockItem extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  state = {
+    isReadOnly: false
+  };
+
   handleClick() {
-    console.log(this);
+    console.log(this.state.isReadOnly);
+    this.setState({
+      isReadOnly: !this.state.isReadOnly
+    });
   }
 
   handleRemove = id => {
@@ -20,15 +27,29 @@ class StockItem extends React.Component {
 
   render() {
     const { id, name, price } = this.props;
+    const { isReadOnly } = this.state;
+    console.log(isReadOnly);
     return (
       <>
         <th scope="row">
           <input type="checkbox" className="input-control" name="stock" />
         </th>
+        {!isReadOnly ? (
+          <>
+            <td>{name}</td>
 
-        <td>{name}</td>
-
-        <td>{price}</td>
+            <td>{price}</td>
+          </>
+        ) : (
+          <>
+            <td>
+              <input type="text" value={name} />
+            </td>
+            <td>
+              <input type="text" value={price} />
+            </td>
+          </>
+        )}
         <td>
           <i className="fas fa-edit" onClick={this.handleClick} />
           &nbsp;

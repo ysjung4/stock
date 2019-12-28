@@ -2,7 +2,7 @@ import React from "react";
 import StockList from "./StockList";
 
 const content = props => {
-  const { stocks } = props;
+  const { stocks, handleRemove } = props;
   return (
     <div id="result">
       <table className="table">
@@ -15,7 +15,7 @@ const content = props => {
           </tr>
         </thead>
         <tbody>
-          <StockList stocks={stocks} />
+          <StockList stocks={stocks} handleRemove={handleRemove} />
         </tbody>
       </table>
     </div>

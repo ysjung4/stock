@@ -11,6 +11,7 @@ const Search = () => {
           id="search"
           placeholder="Search..."
         />
+        <button className="btn btn-danger">Search</button>
       </div>
       <div className="input-group mb-3">
         <div className="custom-control custom-checkbox mr-sm-2">

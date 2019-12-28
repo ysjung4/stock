@@ -1,18 +1,24 @@
 import React from "react";
 import StockItem from "./StockItem";
 
-const renderData = data => {
-  return data.map(e => (
-    <tr>
-      <StockItem name={e.name} price={e.price} />
+const renderData = props => {
+  const { stocks, handleRemove } = props;
+  return stocks.map(e => (
+    <tr key={e.id}>
+      <StockItem
+        id={e.id}
+        name={e.name}
+        price={e.price}
+        handleRemove={handleRemove}
+      />
     </tr>
   ));
 };
 
-const StockList = ({ stocks }) => {
+const StockList = props => {
   return (
     <>
-      {renderData(stocks)
+      {renderData(props)
 
       /* <tr>
         <th colSpan={4} scope="row">

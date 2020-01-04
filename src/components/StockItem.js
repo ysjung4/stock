@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 class StockItem extends React.Component {
   // const name = props.name;
